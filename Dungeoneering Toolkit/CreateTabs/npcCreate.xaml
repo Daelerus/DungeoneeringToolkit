@@ -1,0 +1,317 @@
+﻿<UserControl x:Class="Dungeoneering_Toolkit.CreateTabs.npcCreate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Dungeoneering_Toolkit.CreateTabs"
+             mc:Ignorable="d" 
+             d:DesignHeight="2100" d:DesignWidth="1200"
+             Background="White">
+    <DockPanel Name="DnD5" Margin="350 0 0 0">
+        <StackPanel Name="Bookmarks" Margin="-345 50 0 0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Button Content="General" Width="340" Height="35"/>
+            <Button Content="Attributes" Width="340" Height="35"/>
+            <Button Content="Proficiencies" Width="340" Height="35"/>
+            <Button Content="Saving Throws" Width="340" Height="35"/>
+            <Button Content="Skills" Width="340" Height="35"/>
+            <Button Content="Equipment" Width="340" Height="35"/>
+            <Button Content="Wealth" Width="340" Height="35"/>
+            <Button Content="Inventorytype" Width="340" Height="35"/>
+            <Button Content="Languages" Width="340" Height="35"/>
+            <Button Content="Other Proficiencies" Width="340" Height="35"/>
+            <Button Content="Feats and Traits" Width="340" Height="35"/>
+            <Button Content="Attacks" Width="340" Height="35"/>
+            <Button Content="Background" Width="340" Height="35"/>
+            <Button Content="Relationships" Width="340" Height="35"/>
+        </StackPanel>
+        <ScrollViewer>
+            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <TextBlock Text="Name" Margin="10 20 0 0"/>
+                    <TextBox Name="NpcName" Text="New NPC" Width="200" Height="20" Margin="110 -20 0 0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                    <TextBlock Text="Race" Margin="400 -16 0 0" Grid.RowSpan="3"/>
+                    <ComboBox Name="NpcRaces" Width="200" Height="20" Margin="450 -18 100 0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                        <ComboBoxItem Content="Human"/>
+                        <ComboBoxItem Content="High-Elf"/>
+                        <ComboBoxItem Content="Dwarf"/>
+                    </ComboBox>
+                    <TextBlock Text="Level" Margin="10 20 0 0"/>
+                    <TextBox Name="NpcLevel" Margin="110 -20 0 0" HorizontalAlignment="Left" Width="50"/>
+                    <TextBlock Text="Class" Margin="10 20 0 0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <ComboBox Width="200" Height="20" Margin="110,-20,0,230" VerticalAlignment="Top" HorizontalAlignment="Left">
+                        <ComboBoxItem Content="Barbarian"/>
+                        <ComboBoxItem Content="Bard"/>
+                        <ComboBoxItem Content="Cleric"/>
+                        <ComboBoxItem Content="Druid"/>
+                        <ComboBoxItem Content="Fighter"/>
+                        <ComboBoxItem Content="Monk"/>
+                        <ComboBoxItem Content="Paladin"/>
+                        <ComboBoxItem Content="Ranger"/>
+                        <ComboBoxItem Content="Rogue"/>
+                        <ComboBoxItem Content="Sorcerer"/>
+                        <ComboBoxItem Content="Warlock"/>
+                        <ComboBoxItem Content="Wizard"/>
+                    </ComboBox>
+                    <TextBlock Text="Attributes" Margin="10 -180 0 0" FontWeight="Black"/>
+                    <TextBlock Text="Strength" Margin="10 -160 0 0"/>
+                    <TextBox Name="NpcStrength" Width="50" Height="20" Margin="10 -260 265 0" VerticalAlignment="Stretch" HorizontalAlignment="Left"/>
+                    <TextBlock Text="Dexterity" Margin="70 -160 0 0"/>
+                    <TextBox Name="NpcDexterity" Width="50" Height="20" Margin="70 -260 200 0" VerticalAlignment="Stretch" HorizontalAlignment="Left"/>
+                    <TextBlock Text="Const." Margin="137 -160 0 0"/>
+                    <TextBox Name="NpcConstitution" Width="50" Height="20" Margin="130 -260 265 0" VerticalAlignment="Stretch" HorizontalAlignment="Left"/>
+                    <TextBlock Text="Int." Margin="205 -160 0 0"/>
+                    <TextBox Name="NpcIntelligence" Width="50" Height="20" Margin="190 -260 200 0" VerticalAlignment="Stretch" HorizontalAlignment="Left"/>
+                    <TextBlock Text="Wisdom" Margin="250 -160 0 0"/>
+                    <TextBox Name="NpcWisdom" Width="50" Height="20" Margin="250 -260 265 0" VerticalAlignment="Stretch" HorizontalAlignment="Left"/>
+                    <TextBlock Text="Charisma" Margin="310 -160 0 0"/>
+                    <TextBox Name="NpcCharisma" Width="50" Height="20" Margin="310 -260 200 0" VerticalAlignment="Stretch" HorizontalAlignment="Left"/>
+                    <TextBlock Name="NpcStrengthMod" Text="Mod" Margin="20 -120 0 0" />
+                    <TextBlock Name="NpcDexterityMod" Text="Mod" Margin="80 -120 0 0" />
+                    <TextBlock Name="NpcConstMod" Text="Mod" Margin="140 -120 0 0" />
+                    <TextBlock Name="NpcIntMod" Text="Mod" Margin="200 -120 0 0" />
+                    <TextBlock Name="NpcWisdomMod" Text="Mod" Margin="260 -120 0 0" />
+                    <TextBlock Name="NpcCharismaMod" Text="Mod" Margin="320 -120 0 0" />
+                    <TextBlock Text="Saving Throws" FontWeight="Bold" Margin="10 -40 0 0"/>
+                    <TextBlock Text="STR" Margin="10 0 0 0"/>
+                    <TextBlock Text="DEX" Margin="60 -16 0 0"/>
+                    <TextBlock Text="CON" Margin="110 -16 0 0"/>
+                    <TextBlock Text="INT" Margin="160 -16 0 0"/>
+                    <TextBlock Text="WIS" Margin="210 -16 0 0"/>
+                    <TextBlock Text="CHA" Margin="260 -16 0 0"/>
+                    <CheckBox Name="NpcSTR" Margin="12 0 0 0"/>
+                    <CheckBox Name="NpcDEX" Margin="62 -16 0 0"/>
+                    <CheckBox Name="NpcCON" Margin="112 -16 0 0"/>
+                    <CheckBox Name="NpcINT" Margin="162 -16 0 0"/>
+                    <CheckBox Name="NpcWIS" Margin="212 -16 0 0"/>
+                    <CheckBox Name="NpcCHA" Margin="262 -16 0 0"/>
+                    <TextBlock Text="STRx" Margin="10 0 0 0"/>
+                    <TextBlock Text="DEXx" Margin="60 -16 0 0"/>
+                    <TextBlock Text="CONx" Margin="110 -16 0 0"/>
+                    <TextBlock Text="INTx" Margin="160 -16 0 0"/>
+                    <TextBlock Text="WISx" Margin="210 -16 0 0"/>
+                    <TextBlock Text="CHAx" Margin="260 -16 0 0"/>
+                    <TextBlock Text="Skills" FontWeight="Bold" Margin="10 10 0 0"/>
+                    <TextBlock Text="Acrobatics(Dex)" Margin="60 5 0 0"/>
+                    <TextBox Name="NpcAcrobatics" Text="ModX" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 -18 0 0"/>
+                    <TextBlock Text="Animal Handling(Wis)" Margin="60 5 0 0"/>
+                    <TextBox Name="NpcAnimalHandling" Text="ModX" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 -18 0 0"/>
+                    <TextBlock Text="Arcana(Int)" Margin="60 5 0 0"/>
+                    <TextBox Name="NpcArcana" Text="ModX" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 -18 0 0"/>
+                    <TextBlock Text="Athletics(Str)" Margin="60 5 0 0"/>
+                    <TextBox Name="NpcAthletics" Text="ModX" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 -18 0 0"/>
+                    <TextBlock Text="Deception(Cha)" Margin="60 5 0 0"/>
+                    <TextBox Name="NpcDeception" Text="ModX" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 -18 0 0"/>
+                    <TextBlock Text="History(Int)" Margin="60 5 0 0"/>
+                    <TextBox Name="NpcHistory" Text="ModX" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 -18 0 0"/>
+                    <TextBlock Text="Insight(Wis)" Margin="60 5 0 0"/>
+                    <TextBox Name="NpcInsight" Text="ModX" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 -18 0 0"/>
+                    <TextBlock Text="Intimidation(Cha)" Margin="60 5 0 0"/>
+                    <TextBox Name="NpcIntimidation" Text="ModX" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 -18 0 0"/>
+                    <TextBlock Text="Investigation(Int)" Margin="60 5 0 0"/>
+                    <TextBox Name="NpcInvestigation" Text="ModX" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 -18 0 0"/>
+                    <TextBlock Text="Medicine(Wis)" Margin="260 -202 0 0"/>
+                    <TextBox Name="NpcMedicine" Text="ModX" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210,-203,0,0"/>
+                    <TextBlock Text="Nature(Int)" Margin="260 -178 0 0"/>
+                    <TextBox Name="NpcNature" Text="ModX" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210 -179 0 0"/>
+                    <TextBlock Text="Perception(Wis)" Margin="260 -156 0 0"/>
+                    <TextBox Name="NpcPerception" Text="ModX" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210 -156 0 0"/>
+                    <TextBlock Text="Performance(Cha)" Margin="260 -133 0 0"/>
+                    <TextBox Name="NpcPerformance" Text="ModX" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210 -133 0 0"/>
+                    <TextBlock Text="Persuasion(Cha)" Margin="260 -110 0 0"/>
+                    <TextBox Name="NpcPersuasion" Text="ModX" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210 -110 0 0"/>
+                    <TextBlock Text="Religion(Int)" Margin="260 -87 0 0"/>
+                    <TextBox Name="NpcReligion" Text="ModX" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210 -87 0 0"/>
+                    <TextBlock Text="Sleight of Hand(Dex)" Margin="260 -63 0 0"/>
+                    <TextBox Name="NpcSleightOfHand" Text="ModX" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210 -63 0 0"/>
+                    <TextBlock Text="Stealth(Dex)" Margin="260 -40 0 0"/>
+                    <TextBox Name="NpcStealth" Text="ModX" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210 -40 0 0"/>
+                    <TextBlock Text="Survival(Wis)" Margin="260 -18 0 0"/>
+                    <TextBox Name="NpcSurvival" Text="ModX" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210 -18 0 0"/>
+                    <TextBlock Text="Passive Perception" Margin="10 10 0 0"/>
+                    <TextBlock Text="PPx" Margin="120 -16 0 0"/>
+                    <TextBlock Text="Armorclass" Margin="400 -485 0 0"/>
+                    <TextBlock Text="AC" Margin="500 -485 0 0"/>
+                    <TextBlock Text="Manual AC" Margin="550 -485 0 0"/>
+                    <TextBox Name="NpcManualAC" Margin="630 -950 0 0" HorizontalAlignment="Left" Width="50" Height="20"/>
+                    <TextBlock Text="Max Hitpoints" Margin="400 -455 0 0"/>
+                    <TextBox Name="NpcMaxHitpoints" Margin="520 -895 0 0" HorizontalAlignment="Left" Width="70" Height="20"/>
+                    <TextBlock Text="Temporary Hitpoints" Margin="400 -425 0 0"/>
+                    <TextBox Name="NpcTempHitpoints" Margin="520 -835 0 0" HorizontalAlignment="Left" Width="70" Height="20"/>
+                    <TextBlock Text="Current Hitpoints" Margin="400 -400 0 0"/>
+                    <TextBox Name="NpcCurrHitpoints" Margin="520 -780 0 0" HorizontalAlignment="Left" Width="70" Height="20"/>
+                    <TextBlock Text="Initiative" Margin="400 -360 0 0"/>
+                    <TextBlock Text="InitMod" Margin="450 -360 0 0"/>
+                    <TextBlock Text="Speed" Margin="400 -340 0 0"/>
+                    <TextBlock Text="SpeedVal" Margin="450 -340 0 0"/>
+                    <TextBlock Text="Vision" Margin="400 -320 0 0"/>
+                    <TextBox Name="NpcVision" Margin="450 -622 0 0" HorizontalAlignment="Left" Width="200" Height="20"/>
+                    <TextBlock Text="Equipment" FontWeight="Bold" FontSize="14" Margin="10 20 0 0"/>
+                    <TextBlock Text="Armortype" Margin="10 10 0 0" />
+                    <ComboBox Name="NpcArmortype" Margin="180 -15 140 0" Width="200" Height="20" HorizontalAlignment="Left">
+                        <ComboBoxItem Content="No Armor"/>
+                        <ComboBoxItem Content="Padded Armor"/>
+                        <ComboBoxItem Content="Leather Armor"/>
+                        <ComboBoxItem Content="Studded Leather Armor"/>
+                        <ComboBoxItem Content="Hide Armor"/>
+                        <ComboBoxItem Content="Chain Shirt"/>
+                        <ComboBoxItem Content="Scale Mail"/>
+                        <ComboBoxItem Content="Breastplate"/>
+                        <ComboBoxItem Content="Half Plate"/>
+                        <ComboBoxItem Content="Ring Mail"/>
+                        <ComboBoxItem Content="Chain Mail"/>
+                        <ComboBoxItem Content="Splint Armor"/>
+                        <ComboBoxItem Content="Plate Armor"/>
+                        <ComboBoxItem Content="Natural Armor Monk"/>
+                        <ComboBoxItem Content="Natural Armor Barbarian"/>
+                        <ComboBoxItem Content="Natural Armor Dragonborn"/>
+                    </ComboBox>
+                    <TextBlock Text="Armorenchantment-Level" Margin="10 9 0 0"/>
+                    <ComboBox Name="Armorenchantmentlevel" Margin="180 -20 0 0" Width="50" Height="20" HorizontalAlignment="Left">
+                        <ComboBoxItem Content="0"/>
+                        <ComboBoxItem Content="+1"/>
+                        <ComboBoxItem Content="+2"/>
+                        <ComboBoxItem Content="+3"/>
+                        <ComboBoxItem Content="+4"/>
+                        <ComboBoxItem Content="+5"/>
+                    </ComboBox>
+                    <TextBlock Text="Shield" Margin="10 10 0 0"/>
+                    <ComboBox Name="NpcShield" Margin="180 -20 0 0" Width="200" Height="20" HorizontalAlignment="Left">
+                        <ComboBoxItem Content="None"/>
+                        <ComboBoxItem Content="Parry Shield"/>
+                        <ComboBoxItem Content="Normal Shield"/>
+                        <ComboBoxItem Content="Tower Shield"/>
+                    </ComboBox>
+                    <TextBlock Text="Wealth" Margin="10 10 0 0" FontWeight="Bold"/>
+                    <TextBlock Text="Platinum" Margin="10 10 0 0"/>
+                    <TextBox Name="NpcPlatinumAmount" Margin="15 10 0 0" HorizontalAlignment="Left" Width="40" Height="20"/>
+                    <TextBlock Text="Elektrum" Margin="75 -46 0 0"/>
+                    <TextBox Name="NpcElektrumAmount" Margin="75 -20 0 0" HorizontalAlignment="Left" Width="40" Height="20"/>
+                    <TextBlock Text="Gold" Margin="140 -46 0 0"/>
+                    <TextBox Name="NpcGoldAmount" Margin="135 -20 0 0" HorizontalAlignment="Left" Width="40" Height="20"/>
+                    <TextBlock Text="Silver" Margin="190 -46 0 0"/>
+                    <TextBox Name="NpcSilverAmount" Margin="190 -20 0 0" HorizontalAlignment="Left" Width="40" Height="20"/>
+                    <TextBlock Text="Copper" Margin="240 -46 0 0"/>
+                    <TextBox Name="NpcCopperAmount" Margin="240 -20 0 0" HorizontalAlignment="Left" Width="40" Height="20"/>
+                    <TextBlock Text="Inventory" FontWeight="Bold" Margin="10 20 0 0"/>
+                    <Button Name="cmdNpcItemEquipmentAdd" Margin="10 20 0 0" Width="100" Height="20" HorizontalAlignment="Left" Content="Add Item" Click="cmdNpcItemEquipmentAdd_Click"/>
+                    <ListView Name="NpcEquipmentTable" Margin="10 0 0 0" Width="710" HorizontalAlignment="Left">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Name" Width="450" DisplayMemberBinding="{Binding Name}">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <!--<l1:ClickToEditTextboxControl Text="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MinWidth="40" Height="23" />-->
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Weight" Width="100" DisplayMemberBinding="{Binding Weight}" />
+                                <GridViewColumn Header="Magical" Width="60" DisplayMemberBinding="{Binding Magical}"/>
+                                <GridViewColumn Header="Carrytype" Width="100" DisplayMemberBinding="{Binding Carrytype}"/>
+                            </GridView>
+                        </ListView.View>
+
+                    </ListView>
+                    <TextBlock Text="Languages" Margin="10 10 0 0"/>
+                    <Button Name="cmdNpcLanguagesAdd" Margin="10 20 0 0" Width="100" Height="20" HorizontalAlignment="Left" Content="Add Language" Click="cmdNpcLanguagesAdd_Click"/>
+                    <ListView Name="NpcLanguageTable" Margin="10 0 0 0" Width="710" HorizontalAlignment="Left">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Name" Width="455" DisplayMemberBinding="{Binding Name}">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <!--<l1:ClickToEditTextboxControl Text="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MinWidth="40" Height="23" />-->
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Spoken" Width="125" DisplayMemberBinding="{Binding Weight}" />
+                                <GridViewColumn Header="Written" Width="125" DisplayMemberBinding="{Binding Weight}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <TextBlock Text="Other Proficiencies" Margin="10 10 0 0"/>
+                    <Button Name="cmdNpcProficienciesAdd" Margin="10 20 0 0" Width="100" Height="20" HorizontalAlignment="Left" Content="Add Proficiency" Click="cmdNpcProficiencyAdd_Click"/>
+                    <ListView Name="NpcProficienciesTable" Margin="10 0 0 0" Width="710" HorizontalAlignment="Left">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Name" Width="455" DisplayMemberBinding="{Binding Name}">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <!--<l1:ClickToEditTextboxControl Text="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MinWidth="40" Height="23" />-->
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Proficiencybonus" Width="125" DisplayMemberBinding="{Binding Weight}" />
+                                <GridViewColumn Header="Attribute" Width="125" DisplayMemberBinding="{Binding Weight}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <TextBlock Text="Feats and Traits" Margin="10 10 0 0"/>
+                    <Button Name="cmdNpcFeatTraitAdd" Margin="10 20 0 0" Width="100" Height="20" HorizontalAlignment="Left" Content="Add Feat/Trait" Click="cmdNpcFeatTraitAdd_Click"/>
+                    <ListView Name="NpcFeatTraitTable" Margin="10 0 0 0" Width="710" HorizontalAlignment="Left">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Name" Width="250" DisplayMemberBinding="{Binding Name}">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <!--<l1:ClickToEditTextboxControl Text="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MinWidth="40" Height="23" />-->
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Type" Width="100" DisplayMemberBinding="{Binding Weight}" />
+                                <GridViewColumn Header="Source" Width="150" DisplayMemberBinding="{Binding Weight}" />
+                                <GridViewColumn Header="Short Description" Width="200" DisplayMemberBinding="{Binding Weight}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <TextBlock Text="Attacks" Margin="10 10 0 0"/>
+                    <Button Name="cmdNpcAttackAdd" Margin="10 20 0 0" Width="100" Height="20" HorizontalAlignment="Left" Content="Add Attack" Click="cmdNpcAttackAdd_Click"/>
+                    <ListView Name="NpcAttackTable" Margin="10 0 0 0" Width="710" HorizontalAlignment="Left">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Name" Width="250" DisplayMemberBinding="{Binding Name}">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <!--<l1:ClickToEditTextboxControl Text="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MinWidth="40" Height="23" />-->
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Attack" Width="100" DisplayMemberBinding="{Binding Weight}" />
+                                <GridViewColumn Header="Damage" Width="150" DisplayMemberBinding="{Binding Weight}" />
+                                <GridViewColumn Header="Range" Width="100" DisplayMemberBinding="{Binding Weight}" />
+                                <GridViewColumn Header="Ammunition" Width="70" DisplayMemberBinding="{Binding Weight}" />
+                                <GridViewColumn Header="Used" Width="40" DisplayMemberBinding="{Binding Weight}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <TextBlock Text="Characterbackground" Margin="10 10 0 0"/>
+                    <TextBox Name="NpcBackground" HorizontalAlignment="Left" VerticalAlignment="Top" Width="750" Height="400" Margin="10 10 0 0"/>
+                    <TextBlock Text="Relationships" Margin="10 10 0 0"/>
+                    <Button Name="cmdNpcRelationshipAdd" Margin="10 20 0 0" Width="100" Height="20" HorizontalAlignment="Left" Content="Add Relationship" Click="cmdNpcRelationshipAdd_Click"/>
+                    <ListView Name="NpcRelationshipTable" Margin="10 0 0 0" Width="710" HorizontalAlignment="Left">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Name" Width="300" DisplayMemberBinding="{Binding Name}">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <!--<l1:ClickToEditTextboxControl Text="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MinWidth="40" Height="23" />-->
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Is" Width="100" DisplayMemberBinding="{Binding Weight}" />
+                                <GridViewColumn Header="Since" Width="100" DisplayMemberBinding="{Binding Weight}" />
+                                <GridViewColumn Header="Reasoning" Width="100" DisplayMemberBinding="{Binding Weight}" />
+                                <GridViewColumn Header="Attributes" Width="200" DisplayMemberBinding="{Binding Weight}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </DockPanel>
+
+</UserControl>

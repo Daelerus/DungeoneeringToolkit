@@ -1,0 +1,115 @@
+﻿<Window x:Class="Dungeoneering_Toolkit.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dungeoneering_Toolkit"
+        mc:Ignorable="d"
+        Title="Dungeoneering Toolkit" Height="800" Width="1600"
+        MinHeight="500" MinWidth="1600">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <DockPanel Grid.ColumnSpan="3" Height="30" VerticalAlignment="Top">
+            <Menu DockPanel.Dock="Top" HorizontalAlignment="Stretch" VerticalAlignment="Top" >
+                <MenuItem Header="_Create" Width="100" FontWeight="Bold" Height="30">
+                    <MenuItem Header="_PC" FontWeight="Bold" Click="cmdPcCreate_Click"/>
+                    <MenuItem Header="_NPC" FontWeight="Bold" Click="cmdNpcCreate_Click"/>
+                    <MenuItem Header="_Faction" FontWeight="Bold" Click="cmdFactionCreate_Click" Foreground="Gray"/>
+                    <MenuItem Header="_Item" FontWeight="Bold" Click="cmdItemCreate_Click" Foreground="Gray"/>
+                    <MenuItem Header="_Event" FontWeight="Bold" Click="cmdEventCreate_Click" Foreground="Gray"/>
+                    <MenuItem Header="_Encounter" FontWeight="Bold" Click="cmdEncounterCreate_Click" Foreground="Gray"/>
+                    <MenuItem Header="_City" FontWeight="Bold" Click="cmdCityCreate_Click" Foreground="Gray"/>
+                    <MenuItem Header="_Dungeon" FontWeight="Bold" Click="cmdDungeonCreate_Click" Foreground="Gray"/>
+                    <MenuItem Header="_Map" FontWeight="Bold" Click="cmdMapCreate_Click" Foreground="Gray"/>
+                    <MenuItem Header="_Rule" FontWeight="Bold" Click="cmdRuleCreate_Click" Foreground="Gray"/>
+                </MenuItem>
+                <MenuItem Header="_Publish" Width="100" FontWeight="Bold" Click="cmdPublishFile_Click"/>
+                <MenuItem Name="cmdRuleShow" Header="_Rules" Width="100" FontWeight="Bold" Click="cmdRuleShow_Click"/>
+                <MenuItem Header="_Help" Width="100" FontWeight="Bold">
+                    <MenuItem Header="_Creation" FontWeight="Bold" Click="cmdCreationHelp_Click"/>
+                    <MenuItem Header="_Tutorials" FontWeight="Bold" Click="cmdTutorialsHelp_Click"/>
+                    <MenuItem Header="_Rulesystem" FontWeight="Bold" Click="cmdRulesystemHelp_Click"/>
+                </MenuItem>
+                <MenuItem Header="_Market" Width="100" FontWeight="Bold" Click="cmdMarketOpen_Click"/>
+                <MenuItem Header="_About" Width="100" FontWeight="Bold" Click="cmdAboutOpen_Click"/>
+                <MenuItem Header="_Settings" Width="100" FontWeight="Bold" Click="cmdSettingsOpen_Click" />
+                <MenuItem Header="_Messages" Width="100" FontWeight="Bold" Click="cmdMessages_Click"/>
+                <MenuItem Header="_Notifications" Height="30" Width="100" FontWeight="Bold" Click="cmdNotifications_Click"/>
+            </Menu>
+        </DockPanel>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Stretch" Margin="0,33,0,-1.667" VerticalAlignment="Stretch" Grid.ColumnSpan="3" Grid.RowSpan="3"  ScrollViewer.CanContentScroll="True"
+                    ScrollViewer.VerticalScrollBarVisibility="Visible"
+                    ScrollViewer.PanningMode="VerticalOnly">
+
+            <TabItem FontWeight="ExtraBold">
+                <TabItem.Header>
+                    <Button Name="cmdLoad" Click="cmdLoad_Click"  Content="+" FontWeight="ExtraBold" FontSize="16"/>
+                </TabItem.Header>
+                <Grid Background="#FFE5E5E5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            </TabItem>
+
+
+        </TabControl>
+
+        <DockPanel Name="dcpRulesPanel" Grid.Column="2" HorizontalAlignment="Right" Height="800" LastChildFill="False" Margin="147,68,20,0" VerticalAlignment="Top" Width="250" Background="White">
+            <TextBlock Margin=" 100 10 0 0" Text="Rules" FontSize="16" FontWeight="Bold"/>
+            <StackPanel Name="stpRule1" Width="250" Margin="-140 50 0 0" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <TextBlock Text="Rule1"/>
+                <TextBox Name="txtRule1Description" Text="This is displaying the information of rule 1" Height="50" Width="200" HorizontalAlignment="Left" Margin="2 2 0 0" TextWrapping="Wrap" IsReadOnly="True"/>
+                <Button Content="Edit" Name="cmdEditRule1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Width="30" Click="cmdEditRule1_Click"/>
+                <Button Content="Save" Name="cmdSaveRule1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="-50 -30 50 10" Width="30" Visibility="Hidden" Click="cmdSaveRule1_Click"/>
+            </StackPanel>
+        </DockPanel>
+        <StackPanel Name="skpMessagesMain" Width="230" Height="118" Margin="-225 30 0 0" Visibility="Hidden" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Top" Background="LightGray">
+            <TextBlock Text="You currently have x new Message(s)"/>
+            <Line Stroke="Black" StrokeThickness="1" X1="0" X2="230"/>
+            <Button Width="230" Height="50">
+                <StackPanel>
+                <TextBlock Text="Test of Messages"/>
+                <TextBlock Text="Contenttest for Messages..."/>
+                <TextBlock Text="Send by:" />
+                <TextBlock Text="TestUser" Margin="80 -16 0 0"/>
+                <Line Stroke="Black" StrokeThickness="1" X1="0" X2="230"/>
+                </StackPanel>
+            </Button>
+            <Button Width="230" Height="50">
+                <StackPanel>
+                    <TextBlock Text="Test of Messages"/>
+                    <TextBlock Text="Contenttest for Messages..."/>
+                    <TextBlock Text="Send by:" />
+                    <TextBlock Text="TestUser" Margin="80 -16 0 0"/>
+                    <Line Stroke="Black" StrokeThickness="1" X1="0" X2="230"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Name="skpNotificationsMain" Width="230" Height="118" Margin="240 30 0 0" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Top"  Background="LightGray" Visibility="Hidden">
+            <TextBlock Text="You currently have x new Notification(s)"/>
+            <Line Stroke="Black" StrokeThickness="1" X1="0" X2="230"/>
+            <Button Width="230" Height="50">
+                <StackPanel>
+                    <TextBlock Text="Test of Notifciation"/>
+                    <TextBlock Text="Software not up to date. Please update..."/>
+                    <TextBlock Text="Send by:" />
+                    <TextBlock Text="Dungeoneering Devs" Margin="80 -16 0 0"/>
+                    <Line Stroke="Black" StrokeThickness="1" X1="0" X2="230"/>
+                </StackPanel>
+            </Button>
+            <Button Width="230" Height="50">
+                <StackPanel>
+                    <TextBlock Text="Test of Notifications"/>
+                    <TextBlock Text="Your programm has been shutdown..."/>
+                    <TextBlock Text="Send by:" />
+                    <TextBlock Text="Dungeoneering Toolkit" Margin="80 -16 0 0"/>
+                    <Line Stroke="Black" StrokeThickness="1" X1="0" X2="230"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

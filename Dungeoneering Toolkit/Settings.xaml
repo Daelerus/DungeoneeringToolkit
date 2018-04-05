@@ -1,0 +1,56 @@
+﻿<Window x:Class="Dungeoneering_Toolkit.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dungeoneering_Toolkit"
+        mc:Ignorable="d"
+        Title="Settings" Height="320" Width="330"
+        MaxHeight="320"
+        MaxWidth="330"
+        MinHeight="320"
+        MinWidth="330">
+    <Grid>
+        <TabControl Width="480" Height="300" TabStripPlacement="Left">
+            <TabItem Header="General" Height="30">
+                <StackPanel>
+                    <TextBlock Text="Enable Auto-Save" Margin="10"/>
+                    <CheckBox Margin="120 -25 0 0" IsChecked="True"/>
+                    <TextBlock Text="Auto-Save as PDF" Margin="10"/>
+                    <CheckBox Margin="120 -25 0 0"/>
+                    <TextBlock Text="Enable Hotkeys" Margin="10"/>
+                    <CheckBox Margin="120 -25 0 0" IsChecked="True"/>
+                    <TextBlock Text="Enable messages" Margin="10"/>
+                    <CheckBox Margin="120 -25 0 0" IsChecked="True"/>
+                    <TextBlock Text="Enable notifications" Margin="10"/>
+                    <CheckBox Margin="120 -25 0 0" IsChecked="True"/>
+                    <TextBlock Text="Language" Margin="10"/>
+                    <ComboBox Width="100" Height="20" HorizontalAlignment="Left" Margin="120 -35 0 0">
+                        <ComboBoxItem Content="English" IsSelected="True"/>
+                        <ComboBoxItem Content="German"/>
+                    </ComboBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Design" Height="30">
+                
+            </TabItem>
+            <TabItem Header="Buttonlayout" Height="30">
+                
+            </TabItem>
+            <TabItem Header="Features" Height="30">
+                
+            </TabItem>
+            <TabItem Header="Hotkeys" Height="30">
+                
+            </TabItem>
+        </TabControl>
+        <Button Name="cmdClose"
+            Height="20" Width="60" 
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="0,0,5,10"
+                Click="cmdClose_Click">
+            <TextBlock Text="close"/>
+        </Button>
+    </Grid>
+</Window>

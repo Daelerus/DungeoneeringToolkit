@@ -1,0 +1,29 @@
+﻿<Window x:Class="Dungeoneering_Toolkit.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dungeoneering_Toolkit"
+        mc:Ignorable="d"
+        Title="About" Height="300" Width="300">
+    <Grid>
+        <StackPanel>
+            <TextBlock Margin="10 10 0 0" Width="240" Height="210" TextWrapping="Wrap">
+            Dungeoneering Toolkit is a project created in late 2017 by Robin Hilbert. The Project's aim is to ease the process of creating content for pen and paper games. 
+            Currently implemented features are the Basic Creation of NPCs and PCs. The Project is currently in very early development, so there will be many changes in the future and many new features will be properly implemented
+            </TextBlock>
+            <TextBlock Margin="10 -50 0 0" Width="200" TextWrapping="Wrap">
+                Creater of the Project and Developer: Robin Hilbert
+            </TextBlock>
+        </StackPanel>
+
+        <Button Name="cmdClose"
+            Height="30" Width="80" 
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="0 0 10 10"
+                Click="cmdClose_Click">
+            <TextBlock Text="close"/>
+        </Button>
+    </Grid>
+</Window>

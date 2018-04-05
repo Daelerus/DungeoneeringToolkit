@@ -1,0 +1,38 @@
+﻿<Window x:Class="Dungeoneering_Toolkit.FunctionWindows.Publish"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dungeoneering_Toolkit"
+        mc:Ignorable="d"
+        Title="Publish" Height="500" Width="400"
+        MaxHeight="500" MaxWidth="400"
+        MinHeight="500" MinWidth="400">
+    <Grid>
+        <Button Name="cmdPublishFilepath" Width="30" Height="20" Content="..." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80 30 0 0" Click="cmdPublishFilepath_Click"/>
+        <TextBox Width="200" Height="20" Text="Filepath" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110 30 0 0"/>
+        <TextBlock Text="Filetype" Width="60" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30 60 0 0"/>
+        <ComboBox Width="100" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110 60 0 0">
+            <ComboBoxItem Content="DTD"/>
+            <ComboBoxItem Content="PDF"/>
+        </ComboBox>
+        <TextBlock Text="Objectinformation" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30 95 0 0" FontWeight="Bold" FontSize="14"/>
+        <TextBlock Text="Name" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30 120 0 0"/>
+        <TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Margin="100 120 0 0" Width="200"/>
+        <TextBlock Text="Description" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30 150 0 0"/>
+        <TextBox Width="200" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="100 150 0 0"/>
+        <TextBlock Text="Options" Margin="30 90 0 0" Width="60" Height="20" HorizontalAlignment="Left" FontSize="14" FontWeight="Bold"/>
+        <TextBlock Text="Publish on Market" Width="100" Height="20" HorizontalAlignment="Left" Margin="30 150 0 0"/>
+        <CheckBox HorizontalAlignment="Left" Margin="130 301 0 0"/>
+        <TextBlock Text="Payment Option" HorizontalAlignment="Left" Margin="30 330 0 0"/>
+        <ComboBox Width="100" Height="20" HorizontalAlignment="Left" Margin="130 205 0 0">
+            <ComboBoxItem Content="Paid"/>
+            <ComboBoxItem Content="PayWhatYouWant"/>
+            <ComboBoxItem Content="Free"/>
+        </ComboBox>
+        <TextBlock Text="Price" HorizontalAlignment="Left" Margin="30 360 0 0"/>
+        <TextBox Width="100" Height="20" HorizontalAlignment="Left" Margin="130 265 0 0"/>
+        <Button Name="cmdPublishCancel" Width="60" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="Cancel" Margin="0 0 0 10" Click="cmdPublishCancel_Click"/>
+        <Button Name="cmdPublishPublish" Width="60" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="Publish" Margin="0 0 65 10" Click="cmdPublishPublish_Click"/>
+    </Grid>
+</Window>
